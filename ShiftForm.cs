@@ -45,26 +45,40 @@ namespace Касса
             var currentSum = SumTextBox.Text.ToString();
             currentSum = currentSum.Remove(currentSum.Length - 1);
             SumTextBox.Text = Convert.ToString(Convert.ToInt32(currentSum) + article) + "₽";
+
+            ProductTextBox.Text = "Товар за " + article + "₽";
         }
 
         private void EndPurchaseButton_Click(object sender, EventArgs e)
         {
             PurchaseGroupBox.Visible = false;
             NewPurchaseButton.Enabled = true;
+            
+            var currentSum = SumTextBox.Text.ToString();
+            currentSum = currentSum.Remove(currentSum.Length - 1);
+            profit += Convert.ToInt32(currentSum);
             purchaces_count++;
+        }
+                                      
+        private void tabControl1_Click(object sender, EventArgs e)
+        {
+            dataGridView1[1, 1].Value = purchaces_count;
+            dataGridView1[1, 2].Value = profit + " ₽";
         }
 
         private void EndShiftLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Application.OpenForms[0].Close();
-        }
-                              
-        private void tabControl1_Click(object sender, EventArgs e)
-        {
-            dataGridView1[1, 1].Value = purchaces_count;
-            dataGridView1[2, 1].Value = profit + " ₽";
-        }
+            var result = MessageBox.Show("Вы действительно хотите завершить смену?", "Warning",
+                                 MessageBoxButtons.YesNo,
+                                 MessageBoxIcon.Exclamation);
 
+            if (result == DialogResult.Yes)
+            {
+                Application.OpenForms[0].Show();
+                this.Close();
+            }
+            
+        }
 
         private void ShiftForm_FormClosed(object sender, FormClosedEventArgs e)
         {

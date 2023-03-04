@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,21 +9,28 @@ using System.Windows.Forms;
 
 namespace Касса
 {
+            
     public partial class LoginForm : Form
     {
         public LoginForm()
         {
             InitializeComponent();
+            incorrectLoginLabel.Visible = false;
         }
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            incorrectLoginLabel.Visible = false;
-            if (loginTextBox.Text != "" || passwordTextBox.Text != "") // заглушка
+            String inputLogin = loginTextBox.Text;
+            String inputPassword = passwordTextBox.Text;
+
+            DB db = new DB();
+
+            if (!db.IsUserExist(inputLogin, inputPassword))
             {
                 incorrectLoginLabel.Visible = true;
                 return;
             }
+                       
 
             Form shiftForm = new ShiftForm
             {

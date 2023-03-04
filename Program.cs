@@ -6,8 +6,10 @@ using System.Windows.Forms;
 
 namespace Касса
 {
+
     static class Program
     {
+
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
@@ -18,6 +20,7 @@ namespace Касса
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MenuForm());
+
         }
     }
 }

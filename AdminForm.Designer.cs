@@ -30,7 +30,7 @@ namespace Касса
         private void InitializeComponent()
         {
             this.cashier_rating = new System.Windows.Forms.Button();
-            this.new_cashier = new System.Windows.Forms.Button();
+            this.newCashierButton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.BackToMenuButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -47,17 +47,18 @@ namespace Касса
             this.cashier_rating.Text = "Посмотреть эффективность всех кассиров";
             this.cashier_rating.UseVisualStyleBackColor = true;
             // 
-            // new_cashier
+            // newCashierButton
             // 
-            this.new_cashier.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.newCashierButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.new_cashier.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.new_cashier.Location = new System.Drawing.Point(12, 29);
-            this.new_cashier.Name = "new_cashier";
-            this.new_cashier.Size = new System.Drawing.Size(246, 80);
-            this.new_cashier.TabIndex = 4;
-            this.new_cashier.Text = "Добавить нового кассира";
-            this.new_cashier.UseVisualStyleBackColor = true;
+            this.newCashierButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.newCashierButton.Location = new System.Drawing.Point(12, 29);
+            this.newCashierButton.Name = "newCashierButton";
+            this.newCashierButton.Size = new System.Drawing.Size(246, 80);
+            this.newCashierButton.TabIndex = 4;
+            this.newCashierButton.Text = "Добавить нового кассира";
+            this.newCashierButton.UseVisualStyleBackColor = true;
+            this.newCashierButton.Click += new System.EventHandler(this.newCashierButton_Click);
             // 
             // button1
             // 
@@ -91,7 +92,7 @@ namespace Касса
             this.Controls.Add(this.BackToMenuButton);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.cashier_rating);
-            this.Controls.Add(this.new_cashier);
+            this.Controls.Add(this.newCashierButton);
             this.Name = "AdminForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Admin";
@@ -103,7 +104,7 @@ namespace Касса
         #endregion
 
         private System.Windows.Forms.Button cashier_rating;
-        private System.Windows.Forms.Button new_cashier;
+        private System.Windows.Forms.Button newCashierButton;
         //private System.Windows.Forms.Button shift_start;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button BackToMenuButton;

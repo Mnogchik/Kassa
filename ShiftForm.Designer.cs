@@ -42,7 +42,7 @@ namespace Касса
             this.AddProductButton = new System.Windows.Forms.Button();
             this.SumTextBox = new System.Windows.Forms.TextBox();
             this.ArticleTextBox = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.ProductTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -61,7 +61,7 @@ namespace Касса
             | System.Windows.Forms.AnchorStyles.Right)));
             this.endShiftLabel.AutoSize = true;
             this.endShiftLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.endShiftLabel.Location = new System.Drawing.Point(79, 469);
+            this.endShiftLabel.Location = new System.Drawing.Point(79, 553);
             this.endShiftLabel.Name = "endShiftLabel";
             this.endShiftLabel.Size = new System.Drawing.Size(113, 17);
             this.endShiftLabel.TabIndex = 7;
@@ -72,7 +72,7 @@ namespace Касса
             // EndShiftLinkLabel
             // 
             this.EndShiftLinkLabel.AutoSize = true;
-            this.EndShiftLinkLabel.Location = new System.Drawing.Point(79, 415);
+            this.EndShiftLinkLabel.Location = new System.Drawing.Point(79, 499);
             this.EndShiftLinkLabel.Name = "EndShiftLinkLabel";
             this.EndShiftLinkLabel.Size = new System.Drawing.Size(105, 15);
             this.EndShiftLinkLabel.TabIndex = 9;
@@ -86,7 +86,7 @@ namespace Касса
             this.tabPage2.Location = new System.Drawing.Point(4, 24);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(268, 379);
+            this.tabPage2.Size = new System.Drawing.Size(268, 468);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Доп. информация";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -98,12 +98,13 @@ namespace Касса
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2});
-            this.dataGridView1.Location = new System.Drawing.Point(8, 3);
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(243, 367);
+            this.dataGridView1.Size = new System.Drawing.Size(262, 462);
             this.dataGridView1.TabIndex = 0;
             // 
             // tabPage1
@@ -113,7 +114,7 @@ namespace Касса
             this.tabPage1.Location = new System.Drawing.Point(4, 24);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(268, 379);
+            this.tabPage1.Size = new System.Drawing.Size(268, 468);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Главная";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -137,12 +138,12 @@ namespace Касса
             this.PurchaseGroupBox.Controls.Add(this.AddProductButton);
             this.PurchaseGroupBox.Controls.Add(this.SumTextBox);
             this.PurchaseGroupBox.Controls.Add(this.ArticleTextBox);
-            this.PurchaseGroupBox.Controls.Add(this.textBox2);
+            this.PurchaseGroupBox.Controls.Add(this.ProductTextBox);
             this.PurchaseGroupBox.Controls.Add(this.label1);
             this.PurchaseGroupBox.Controls.Add(this.label2);
             this.PurchaseGroupBox.Location = new System.Drawing.Point(0, 76);
             this.PurchaseGroupBox.Name = "PurchaseGroupBox";
-            this.PurchaseGroupBox.Size = new System.Drawing.Size(268, 303);
+            this.PurchaseGroupBox.Size = new System.Drawing.Size(268, 396);
             this.PurchaseGroupBox.TabIndex = 9;
             this.PurchaseGroupBox.TabStop = false;
             this.PurchaseGroupBox.Visible = false;
@@ -150,7 +151,7 @@ namespace Касса
             // EndPurchaseButton
             // 
             this.EndPurchaseButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.EndPurchaseButton.Location = new System.Drawing.Point(38, 260);
+            this.EndPurchaseButton.Location = new System.Drawing.Point(38, 336);
             this.EndPurchaseButton.Name = "EndPurchaseButton";
             this.EndPurchaseButton.Size = new System.Drawing.Size(184, 37);
             this.EndPurchaseButton.TabIndex = 9;
@@ -162,7 +163,7 @@ namespace Касса
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(38, 161);
+            this.label3.Location = new System.Drawing.Point(46, 212);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(125, 21);
             this.label3.TabIndex = 6;
@@ -172,7 +173,7 @@ namespace Касса
             // 
             this.AddedSumLabel.AutoSize = true;
             this.AddedSumLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.AddedSumLabel.Location = new System.Drawing.Point(181, 201);
+            this.AddedSumLabel.Location = new System.Drawing.Point(188, 252);
             this.AddedSumLabel.Name = "AddedSumLabel";
             this.AddedSumLabel.Size = new System.Drawing.Size(87, 25);
             this.AddedSumLabel.TabIndex = 8;
@@ -181,7 +182,7 @@ namespace Касса
             // AddProductButton
             // 
             this.AddProductButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.AddProductButton.Location = new System.Drawing.Point(59, 63);
+            this.AddProductButton.Location = new System.Drawing.Point(55, 83);
             this.AddProductButton.Name = "AddProductButton";
             this.AddProductButton.Size = new System.Drawing.Size(151, 43);
             this.AddProductButton.TabIndex = 3;
@@ -192,7 +193,7 @@ namespace Касса
             // SumTextBox
             // 
             this.SumTextBox.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.SumTextBox.Location = new System.Drawing.Point(28, 185);
+            this.SumTextBox.Location = new System.Drawing.Point(36, 236);
             this.SumTextBox.Multiline = true;
             this.SumTextBox.Name = "SumTextBox";
             this.SumTextBox.ReadOnly = true;
@@ -203,24 +204,24 @@ namespace Касса
             // 
             // ArticleTextBox
             // 
-            this.ArticleTextBox.Location = new System.Drawing.Point(6, 34);
+            this.ArticleTextBox.Location = new System.Drawing.Point(9, 54);
             this.ArticleTextBox.Name = "ArticleTextBox";
             this.ArticleTextBox.Size = new System.Drawing.Size(253, 23);
             this.ArticleTextBox.TabIndex = 2;
             // 
-            // textBox2
+            // ProductTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(12, 135);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(253, 23);
-            this.textBox2.TabIndex = 5;
+            this.ProductTextBox.Location = new System.Drawing.Point(9, 162);
+            this.ProductTextBox.Name = "ProductTextBox";
+            this.ProductTextBox.ReadOnly = true;
+            this.ProductTextBox.Size = new System.Drawing.Size(253, 23);
+            this.ProductTextBox.TabIndex = 5;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(59, 10);
+            this.label1.Location = new System.Drawing.Point(55, 30);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(151, 21);
             this.label1.TabIndex = 1;
@@ -230,7 +231,7 @@ namespace Касса
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(14, 115);
+            this.label2.Location = new System.Drawing.Point(11, 142);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(110, 17);
             this.label2.TabIndex = 4;
@@ -243,7 +244,7 @@ namespace Касса
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(276, 407);
+            this.tabControl1.Size = new System.Drawing.Size(276, 496);
             this.tabControl1.TabIndex = 8;
             this.tabControl1.Click += new System.EventHandler(this.tabControl1_Click);
             // 
@@ -252,20 +253,20 @@ namespace Касса
             this.Column1.HeaderText = "Column1";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
-            this.Column1.Width = 170;
+            this.Column1.Width = 180;
             // 
             // Column2
             // 
             this.Column2.HeaderText = "Column2";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
-            this.Column2.Width = 70;
+            this.Column2.Width = 79;
             // 
             // ShiftForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(275, 439);
+            this.ClientSize = new System.Drawing.Size(284, 523);
             this.Controls.Add(this.EndShiftLinkLabel);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.endShiftLabel);
@@ -289,12 +290,10 @@ namespace Касса
         private System.Windows.Forms.LinkLabel EndShiftLinkLabel;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Label AddedSumLabel;
         private System.Windows.Forms.TextBox SumTextBox;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox ProductTextBox;
         private System.Windows.Forms.TextBox ArticleTextBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
@@ -305,5 +304,7 @@ namespace Касса
         private System.Windows.Forms.GroupBox PurchaseGroupBox;
         private System.Windows.Forms.Button NewPurchaseButton;
         private System.Windows.Forms.Button EndPurchaseButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
     }
 }

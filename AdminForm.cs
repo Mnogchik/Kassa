@@ -31,5 +31,15 @@ namespace Касса
         {
             if (Application.OpenForms.Count == 1 && Application.OpenForms[0].Visible == false) Application.OpenForms[0].Close();
         }
+
+        private void newCashierButton_Click(object sender, EventArgs e)
+        {
+            Form createCashierForm = new CreateCashierForm()
+            {
+                Top = this.Top - 20,
+                Left = this.Left - 20
+            };
+            createCashierForm.ShowDialog();
+        }
     }
 }
