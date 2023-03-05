@@ -33,6 +33,8 @@ namespace Касса
             this.EndShiftLinkLabel = new System.Windows.Forms.LinkLabel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.NewPurchaseButton = new System.Windows.Forms.Button();
             this.PurchaseGroupBox = new System.Windows.Forms.GroupBox();
@@ -46,8 +48,6 @@ namespace Касса
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage1.SuspendLayout();
@@ -72,7 +72,7 @@ namespace Касса
             // EndShiftLinkLabel
             // 
             this.EndShiftLinkLabel.AutoSize = true;
-            this.EndShiftLinkLabel.Location = new System.Drawing.Point(79, 499);
+            this.EndShiftLinkLabel.Location = new System.Drawing.Point(90, 499);
             this.EndShiftLinkLabel.Name = "EndShiftLinkLabel";
             this.EndShiftLinkLabel.Size = new System.Drawing.Size(105, 15);
             this.EndShiftLinkLabel.TabIndex = 9;
@@ -106,6 +106,20 @@ namespace Касса
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(262, 462);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Column1";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 180;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Column2";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 79;
             // 
             // tabPage1
             // 
@@ -248,25 +262,12 @@ namespace Касса
             this.tabControl1.TabIndex = 8;
             this.tabControl1.Click += new System.EventHandler(this.tabControl1_Click);
             // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Column1";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 180;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Column2";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 79;
-            // 
             // ShiftForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 523);
+            this.ControlBox = false;
             this.Controls.Add(this.EndShiftLinkLabel);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.endShiftLabel);

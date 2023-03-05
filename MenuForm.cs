@@ -30,13 +30,12 @@ namespace Касса
 
         private void LoginAsAdminButton_Click(object sender, EventArgs e)
         {
-            Form adminForm = new AdminForm
+            Form adminConfirmForm = new AdminConfirmForm()
             {
-                Left = this.Left,
-                Top = this.Top
+                Left = this.Left + 20,
+                Top = this.Top + 20
             };
-            adminForm.Show();
-            this.Hide();
+            adminConfirmForm.ShowDialog();
         }
 
     }

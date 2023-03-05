@@ -27,7 +27,7 @@ namespace Касса
             return connection;
         }
 
-        public bool IsUserExist(string login, string password)
+        public bool IsUserExist(string login, string password) // false, если пользователя нет или ошибка, связанная с бд
         {
             DB db = new DB();
 
@@ -41,8 +41,14 @@ namespace Касса
 
 
             adapter.SelectCommand = command;
-            adapter.Fill(table);
-
+            try
+            {
+                adapter.Fill(table);
+            }
+            catch
+            {
+                return false;
+            }
             return table.Rows.Count > 0;
         }
     }

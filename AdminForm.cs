@@ -36,10 +36,41 @@ namespace Касса
         {
             Form createCashierForm = new CreateCashierForm()
             {
-                Top = this.Top - 20,
-                Left = this.Left - 20
+                Top = this.Top + 20,
+                Left = this.Left + 20
             };
             createCashierForm.ShowDialog();
+        }
+
+        private void ChangeAccountButton_Click(object sender, EventArgs e)
+        {
+            Form changeAccountForm = new ChangeAccountForm()
+            {
+                Top = this.Top + 20,
+                Left = this.Left + 20
+            };
+            changeAccountForm.ShowDialog();
+        }
+
+        private void CashierEfficiencyButton_Click(object sender, EventArgs e)
+        {
+            Form cashierEfficiencyForm = new CashierEfficiencyForm()
+            {
+                Top = this.Top + 20,
+                Left = this.Left + 20
+            };
+            cashierEfficiencyForm.ShowDialog();
+        }
+
+        private void ChangeAdmPassButton_Click(object sender, EventArgs e)
+        {
+            Form changeAdmPassForm = new ChangeAdmPassForm()
+            {
+                Top = this.Top + 20,
+                Left = this.Left + 20
+            };
+            changeAdmPassForm.ShowDialog();
+
         }
     }
 }

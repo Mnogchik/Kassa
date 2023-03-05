@@ -9,7 +9,6 @@ using System.Windows.Forms;
 
 namespace Касса
 {
-            
     public partial class LoginForm : Form
     {
         public LoginForm()
@@ -25,21 +24,28 @@ namespace Касса
 
             DB db = new DB();
 
-            if (!db.IsUserExist(inputLogin, inputPassword))
+            if (db.IsUserExist(inputLogin, inputPassword) && inputLogin != "admin")
+            {
+                Users.currentLogin = inputLogin;
+
+                Form shiftForm = new ShiftForm
+                {
+                    Left = this.Left,
+                    Top = this.Top
+                };
+
+                shiftForm.Show();
+                this.Close();
+                
+            }
+            else
             {
                 incorrectLoginLabel.Visible = true;
-                return;
             }
-                       
 
-            Form shiftForm = new ShiftForm
-            {
-                Left = this.Left,
-                Top = this.Top
-            };
+            loginTextBox.Text = "";
+            passwordTextBox.Text = "";
 
-            shiftForm.Show();
-            this.Close();
         }
 
         private void back_to_menu_Click(object sender, EventArgs e)
@@ -62,6 +68,11 @@ namespace Касса
         private void LoginForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             if (Application.OpenForms.Count == 1 && Application.OpenForms[0].Visible == false) Application.OpenForms[0].Close();
+        }
+
+        private void passwordTextBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) loginButton.PerformClick();
         }
     }
 }
