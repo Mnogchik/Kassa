@@ -29,11 +29,14 @@ namespace Касса
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminConfirmForm));
             this.incorrectPassLabel = new System.Windows.Forms.Label();
             this.loginButton = new System.Windows.Forms.Button();
             this.BackToMenuButton = new System.Windows.Forms.Button();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.ShowHidePassButton = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.ShowHidePassButton)).BeginInit();
             this.SuspendLayout();
             // 
             // incorrectPassLabel
@@ -42,7 +45,7 @@ namespace Касса
             | System.Windows.Forms.AnchorStyles.Right)));
             this.incorrectPassLabel.AutoSize = true;
             this.incorrectPassLabel.ForeColor = System.Drawing.Color.DarkRed;
-            this.incorrectPassLabel.Location = new System.Drawing.Point(53, 219);
+            this.incorrectPassLabel.Location = new System.Drawing.Point(57, 219);
             this.incorrectPassLabel.Name = "incorrectPassLabel";
             this.incorrectPassLabel.Size = new System.Drawing.Size(163, 15);
             this.incorrectPassLabel.TabIndex = 11;
@@ -82,10 +85,10 @@ namespace Касса
             this.passwordTextBox.Location = new System.Drawing.Point(12, 116);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.PlaceholderText = "  Пароль";
-            this.passwordTextBox.Size = new System.Drawing.Size(246, 30);
+            this.passwordTextBox.Size = new System.Drawing.Size(208, 30);
             this.passwordTextBox.TabIndex = 7;
             this.passwordTextBox.UseSystemPasswordChar = true;
-            this.passwordTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.passwordTextBox_KeyUp);
+            this.passwordTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.passwordTextBox_KeyDown);
             // 
             // label1
             // 
@@ -97,19 +100,37 @@ namespace Касса
             this.label1.TabIndex = 12;
             this.label1.Text = "Введите пароль администратора:";
             // 
+            // ShowHidePassButton
+            // 
+            this.ShowHidePassButton.BackColor = System.Drawing.Color.Transparent;
+            this.ShowHidePassButton.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ShowHidePassButton.Image = ((System.Drawing.Image)(resources.GetObject("ShowHidePassButton.Image")));
+            this.ShowHidePassButton.Location = new System.Drawing.Point(218, 116);
+            this.ShowHidePassButton.Name = "ShowHidePassButton";
+            this.ShowHidePassButton.Size = new System.Drawing.Size(40, 30);
+            this.ShowHidePassButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ShowHidePassButton.TabIndex = 19;
+            this.ShowHidePassButton.TabStop = false;
+            this.ShowHidePassButton.Click += new System.EventHandler(this.ShowHidePassButton_Click);
+            // 
             // AdminConfirmForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(270, 383);
+            this.Controls.Add(this.ShowHidePassButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.incorrectPassLabel);
             this.Controls.Add(this.loginButton);
             this.Controls.Add(this.BackToMenuButton);
             this.Controls.Add(this.passwordTextBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "AdminConfirmForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Подтверждение";
+            ((System.ComponentModel.ISupportInitialize)(this.ShowHidePassButton)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -122,5 +143,6 @@ namespace Касса
         private System.Windows.Forms.Button BackToMenuButton;
         private System.Windows.Forms.TextBox passwordTextBox;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox ShowHidePassButton;
     }
 }

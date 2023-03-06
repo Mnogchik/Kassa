@@ -42,7 +42,7 @@ namespace Касса
             }
         }
 
-        private void passwordTextBox_KeyUp(object sender, KeyEventArgs e)
+        private void passwordTextBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter) loginButton.PerformClick();
         }
@@ -50,6 +50,11 @@ namespace Касса
         private void BackToMenuButton_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void ShowHidePassButton_Click(object sender, EventArgs e)
+        {
+            passwordTextBox.UseSystemPasswordChar = !(passwordTextBox.UseSystemPasswordChar);
         }
     }
 }

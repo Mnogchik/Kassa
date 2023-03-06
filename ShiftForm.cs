@@ -21,12 +21,11 @@ namespace Касса
 
         public void CreateTable()
         {
-            int place = 0; // заглушкa
-
             UserInfo user = new UserInfo();
             int shifts = user.Shifts() + 1;
+            int place = user.Place();
 
-            dataGridView1.Rows.Add("Номер смены", shifts);
+            dataGridView1.Rows.Add("Номер текущей смены", shifts);
             dataGridView1.Rows.Add("Клиентов обслужено за смену", purchaces_count);
             dataGridView1.Rows.Add("Текущая прибыль за смену", profit + " ₽");
             dataGridView1.Rows.Add("Место среди других работников", place);
@@ -45,14 +44,19 @@ namespace Касса
         private void AddProductButton_Click(object sender, EventArgs e)
         {
             if (int.TryParse(ArticleTextBox.Text, out int article))
-            { 
-                AddedSumLabel.Text = "(+" + article.ToString() + "₽)";
+            {
+                ProductsInfo productsInfo = new ProductsInfo();
+                string name = productsInfo.Name(article);
+                int value = productsInfo.Value(article);
+
+                AddedSumLabel.Text = "(+" + value + "₽)";
 
                 var currentSum = SumTextBox.Text.ToString();
                 currentSum = currentSum.Remove(currentSum.Length - 1);
-                SumTextBox.Text = Convert.ToString(Convert.ToInt32(currentSum) + article) + "₽";
 
-                ProductTextBox.Text = "Товар за " + article + "₽";
+                SumTextBox.Text = Convert.ToString(Convert.ToInt32(currentSum) + value) + "₽";
+
+                ProductTextBox.Text = name;
             }
         }
 

@@ -45,7 +45,7 @@ namespace Касса
             this.CashierEfficiencyButton.Name = "CashierEfficiencyButton";
             this.CashierEfficiencyButton.Size = new System.Drawing.Size(246, 56);
             this.CashierEfficiencyButton.TabIndex = 5;
-            this.CashierEfficiencyButton.Text = "Посмотреть производительность всех кассиров";
+            this.CashierEfficiencyButton.Text = "Посмотреть статистику всех кассиров";
             this.CashierEfficiencyButton.UseVisualStyleBackColor = true;
             this.CashierEfficiencyButton.Click += new System.EventHandler(this.CashierEfficiencyButton_Click);
             // 
@@ -111,6 +111,8 @@ namespace Касса
             this.Controls.Add(this.ChangeAccountButton);
             this.Controls.Add(this.CashierEfficiencyButton);
             this.Controls.Add(this.newCashierButton);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "AdminForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Admin";

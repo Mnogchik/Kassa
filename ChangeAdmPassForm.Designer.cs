@@ -71,7 +71,7 @@ namespace Касса
             this.newPasswordTextBox.Location = new System.Drawing.Point(10, 121);
             this.newPasswordTextBox.Name = "newPasswordTextBox";
             this.newPasswordTextBox.PlaceholderText = "  Введите новый пароль";
-            this.newPasswordTextBox.Size = new System.Drawing.Size(210, 29);
+            this.newPasswordTextBox.Size = new System.Drawing.Size(212, 29);
             this.newPasswordTextBox.TabIndex = 13;
             this.newPasswordTextBox.UseSystemPasswordChar = true;
             // 
@@ -108,6 +108,9 @@ namespace Касса
             this.Controls.Add(this.ChangePassButton);
             this.Controls.Add(this.back_to_menu);
             this.Controls.Add(this.newPasswordTextBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "ChangeAdmPassForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Сменить пароль администратора";

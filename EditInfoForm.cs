@@ -50,15 +50,21 @@ namespace Касса
                 MessageBox.Show("Введены некорректные данные", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            UserInfo user = new UserInfo();
-            user.UpdateLogin(login);
-            user.UpdatePassword(password);
-            user.UpdateSum(sum);
-            user.UpdateShifts(shifts);
+
+            if (login == "" || password == "" || login.Length > 30 || password.Length > 30 || sum < 0 || shifts < 0)
+                MessageBox.Show("Введены некорректные данные", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+            {
+                UserInfo user = new UserInfo();
+                user.UpdateLogin(login);
+                user.UpdatePassword(password);
+                user.UpdateSum(sum);
+                user.UpdateShifts(shifts);
 
 
-            MessageBox.Show("Данные успешно изменены", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            this.Close();
+                MessageBox.Show("Данные успешно изменены", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
         }
 
         private void BackToMenuButton_Click(object sender, EventArgs e)

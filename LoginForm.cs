@@ -24,7 +24,7 @@ namespace Касса
 
             DB db = new DB();
 
-            if (db.IsUserExist(inputLogin, inputPassword) && inputLogin != "admin")
+            if (db.IsInfoCorrect(inputLogin, inputPassword) && inputLogin != "admin")
             {
                 Users.currentLogin = inputLogin;
 
@@ -36,7 +36,6 @@ namespace Касса
 
                 shiftForm.Show();
                 this.Close();
-                
             }
             else
             {
@@ -60,19 +59,19 @@ namespace Касса
             this.Close();
         }
 
-        private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
+        private void ShowHidePassButton_Click(object sender, EventArgs e)
         {
-            
+            passwordTextBox.UseSystemPasswordChar = !(passwordTextBox.UseSystemPasswordChar);
+        }
+
+        private void passwordTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) loginButton.PerformClick();
         }
 
         private void LoginForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             if (Application.OpenForms.Count == 1 && Application.OpenForms[0].Visible == false) Application.OpenForms[0].Close();
-        }
-
-        private void passwordTextBox_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter) loginButton.PerformClick();
         }
     }
 }

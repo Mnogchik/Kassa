@@ -27,7 +27,7 @@ namespace Касса
             return connection;
         }
 
-        public bool IsUserExist(string login, string password) // false, если пользователя нет или ошибка, связанная с бд
+        public bool IsInfoCorrect(string login, string password) // false, если пользователя нет или ошибка, связанная с бд
         {
             DB db = new DB();
 
@@ -39,6 +39,29 @@ namespace Касса
             command.Parameters.Add("@uL", MySqlDbType.VarChar).Value = login;
             command.Parameters.Add("@uP", MySqlDbType.VarChar).Value = password;
 
+
+            adapter.SelectCommand = command;
+            try
+            {
+                adapter.Fill(table);
+            }
+            catch
+            {
+                return false;
+            }
+            return table.Rows.Count > 0;
+        }
+
+        public bool IsUserExist(string login) // false, если пользователя нет или ошибка, связанная с бд
+        {
+            DB db = new DB();
+
+            DataTable table = new DataTable();
+
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `user` WHERE login = @uL", db.getConnection());
+            command.Parameters.Add("@uL", MySqlDbType.VarChar).Value = login;
 
             adapter.SelectCommand = command;
             try

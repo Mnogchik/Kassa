@@ -83,6 +83,8 @@ namespace Касса
             this.ClientSize = new System.Drawing.Size(272, 414);
             this.Controls.Add(this.DeleteCashierButton);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "ChangeAccountForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Изменить аккаунт кассира";

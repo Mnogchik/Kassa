@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Text;
 
 namespace Касса
@@ -9,7 +10,7 @@ namespace Касса
     {
         public static string currentLogin;
         public static string currentShifts;
-
+        public static DataTable table;
     }
 
     class UserInfo
@@ -144,6 +145,95 @@ namespace Касса
             command.ExecuteReader();
 
             db.closeConnection();
+        }
+
+        public DataTable CreateSortedTable()
+        {
+            DB db = new DB();
+
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `user` WHERE login != 'admin' ORDER BY `user`.`rating` DESC", db.getConnection());
+
+            adapter.SelectCommand = command;
+
+            Users.table = new DataTable();
+            try
+            {
+                adapter.Fill(Users.table);
+            } 
+            catch { }
+
+            return Users.table;
+        }
+
+        public int Place()
+        {
+            DB db = new DB();
+
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+
+            MySqlCommand command = new MySqlCommand("SELECT `login` FROM `user` WHERE login != 'admin' ORDER BY `user`.`rating` DESC", db.getConnection());
+
+            adapter.SelectCommand = command;
+
+            DataTable table = new DataTable();
+
+            try
+            {
+                adapter.Fill(table);
+            }
+            catch { }
+
+            int index = -1;
+            foreach (DataRow row in table.Rows)
+                if (row[0].ToString() == Users.currentLogin)
+                    index = table.Rows.IndexOf(row) + 1;
+
+            return index;
+        }
+    }
+
+    class ProductsInfo
+    {
+        public string Name(int article)
+        {
+            DB db = new DB();
+            db.openConnection();
+
+            MySqlCommand command = new MySqlCommand("SELECT `name` FROM `product` WHERE article = @art", db.getConnection());
+            command.Parameters.Add("@art", MySqlDbType.VarChar).Value = article;
+
+            MySqlDataReader reader = command.ExecuteReader();
+
+            String name = "";
+            while (reader.Read())
+            {
+                name = reader.GetString(0);
+            }
+            db.closeConnection();
+
+            return name;
+        }
+
+        public int Value(int article)
+        {
+            DB db = new DB();
+            db.openConnection();
+
+            MySqlCommand command = new MySqlCommand("SELECT `value` FROM `product` WHERE article = @art", db.getConnection());
+            command.Parameters.Add("@art", MySqlDbType.VarChar).Value = article;
+
+            MySqlDataReader reader = command.ExecuteReader();
+
+            String value = "";
+            while (reader.Read())
+            {
+                value = reader.GetString(0);
+            }
+            db.closeConnection();
+
+            return Convert.ToInt32(value);
         }
     }
 }

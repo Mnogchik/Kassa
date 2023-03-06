@@ -149,6 +149,9 @@ namespace Касса
             this.Controls.Add(this.label2);
             this.Controls.Add(this.UserTextBox);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "EditInfoForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Редактировать информацию";

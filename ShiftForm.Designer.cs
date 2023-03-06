@@ -271,6 +271,8 @@ namespace Касса
             this.Controls.Add(this.EndShiftLinkLabel);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.endShiftLabel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "ShiftForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Смена в процессе";

@@ -28,7 +28,11 @@ namespace Касса
             MySqlCommand command = new MySqlCommand("SELECT login FROM `user` WHERE login != 'admin'", db.getConnection());
 
             adapter.SelectCommand = command;
-            adapter.Fill(table);
+            try
+            {
+                adapter.Fill(table);
+            }
+            catch { }
 
             dataGridView1.DataSource = table;
             dataGridView1.ReadOnly = true;

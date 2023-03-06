@@ -22,7 +22,7 @@ namespace Касса
 
         private void ChangePassButton_Click(object sender, EventArgs e)
         {
-            var result = MessageBox.Show("Вы уверены, что хотите поменять пароль?", "Внимание",
+            var result = MessageBox.Show("Вы уверены, что хотите изменить пароль?", "Внимание",
                                  MessageBoxButtons.YesNo,
                                  MessageBoxIcon.Exclamation);
 

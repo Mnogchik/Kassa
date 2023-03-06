@@ -23,8 +23,8 @@ namespace Касса
 
             DB db = new DB();
 
-            if (db.IsUserExist(newLogin, newPassword))
-                MessageBox.Show("Такой аккаунт уже существует", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            if (db.IsUserExist(newLogin))
+                MessageBox.Show("Аккаунт с таким именем уже существует", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else if (newLogin == "" || newPassword == "")
                 MessageBox.Show("Все поля должны быть заполнены", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else if (newPassword.Length > 30)
